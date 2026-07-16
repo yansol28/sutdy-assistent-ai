@@ -82,7 +82,7 @@ Como usuário que utiliza apenas teclado para navegação, desejo conseguir nave
 - **FR-008**: Cada pergunta gerada DEVE conter exatamente 4 alternativas e apontar exatamente 1 delas como correta.
 - **FR-009**: O prompt enviado à IA DEVE instruir estritamente que as perguntas de cada tópico cubram especificamente o conteúdo que foi ensinado na explicação daquele tópico gerada na Fatia 2, impedindo perguntas genéricas ou descontextualizadas.
 - **FR-010**: O sistema DEVE renderizar as perguntas de um tópico imediatamente abaixo da explicação desse respectivo tópico assim que elas forem recebidas e processadas pela API.
-- **FR-011**: Ao selecionar uma alternativa (via clique ou teclado), o sistema DEVE atualizar a interface imediatamente fornecendo feedback visual: verde se estiver correta; vermelha para a selecionada incorreta e verde para a correta se estiver errada.
+- **FR-011**: Ao selecionar uma alternativa (via clique ou teclado), o sistema DEVE fornecer feedback visual imediato. Para atender ao Princípio I (Acessibilidade - WCAG 1.4.1), este feedback NÃO deve depender apenas de cores (verde/vermelho). O sistema deve, obrigatoriamente, combinar a mudança de cor com um indicador textual ou ícone visível (ex: adicionar "✓ Correta" ou "✗ Incorreta / Sua Resposta" ao texto da alternativa).
 - **FR-012**: O sistema DEVE desabilitar e remover a capacidade de interação de todas as 4 alternativas de uma pergunta assim que o usuário selecionar uma resposta.
 
 ### Key Entities

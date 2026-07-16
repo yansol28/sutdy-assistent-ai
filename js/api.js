@@ -23,8 +23,15 @@ export async function gerarCronograma(chaveApi, tema, tempo) {
   const data = await response.json();
   const textoResposta = data.candidates[0].content.parts[0].text;
 
-  // Limpeza necessária para que o JSON.parse não quebre.
-  const textoLimpo = textoResposta.replace(/```json/g, '').replace(/```/g, '').trim();
+  // Encontra o início e o fim do objeto JSON de forma robusta
+  const inicioJson = textoResposta.indexOf('{');
+  const fimJson = textoResposta.lastIndexOf('}') + 1;
+
+  if (inicioJson === -1 || fimJson === 0) {
+    throw new Error('A resposta da API não contém um objeto JSON válido.');
+  }
+
+  const textoLimpo = textoResposta.substring(inicioJson, fimJson).trim();
   return JSON.parse(textoLimpo);
 }
 
