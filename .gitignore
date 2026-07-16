@@ -1,0 +1,15 @@
+# Nunca commitar chaves de API ou variáveis de ambiente
+.env
+.env.local
+*.key
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Pastas de dependências, caso algum dia adicione ferramentas com npm
+node_modules/
+
+# Arquivos temporários de editor
+*.swp
+.vscode/settings.json
