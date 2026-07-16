@@ -30,7 +30,7 @@ export async function gerarCronograma(chaveApi, tema, tempo) {
   });
 
   if (!response.ok) {
-    throw new Error('Erro na chamada da API.');
+    throw new Error('Erro na chamada da API. Verifique a chave de API e tente novamente.');
   }
 
   const data = await response.json();

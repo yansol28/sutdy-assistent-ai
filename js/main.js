@@ -1,6 +1,6 @@
 // main.js - Lógica principal
 import { gerarCronograma, gerarExplicacao, gerarPerguntas } from './api.js';
-import { exibirCarregamento, exibirErro, exibirCarregamentoPerguntas, exibirPerguntas, processarResposta } from './ui.js';
+import { exibirCarregamento, exibirErro, exibirCarregamentoPerguntas, exibirPerguntas, processarResposta, atualizarIndicadorProgresso } from './ui.js';
 
 const form = document.getElementById('formCronograma');
 const containerCronograma = document.getElementById('cronograma');
@@ -8,6 +8,38 @@ const btnGerarExplicacoes = document.getElementById('btnGerarExplicacoes');
 const btnGerarPerguntas = document.getElementById('btnGerarPerguntas');
 
 let cronogramaAtual = null;
+
+// Helper para gerar chave única de progresso
+function obterChaveProgresso(tema, tempo, nomeTopico) {
+  const chaveBruta = `${tema}:${tempo}:${nomeTopico}`;
+  // Sanitização: remove caracteres não alfa-numéricos (exceto : e espaços) e limita tamanho
+  const chaveSanitizada = chaveBruta
+    .replace(/[^a-zA-Z0-9: ]/g, '')
+    .substring(0, 100);
+  return `progresso:${chaveSanitizada}`;
+}
+
+function salvarProgresso(tema, tempo, nomeTopico, isChecked) {
+  const chave = obterChaveProgresso(tema, tempo, nomeTopico);
+  try {
+    localStorage.setItem(chave, isChecked);
+  } catch (e) {
+    console.error("Erro ao salvar no localStorage", e);
+  }
+}
+
+function carregarProgresso(tema, tempo, nomeTopico) {
+  const chave = obterChaveProgresso(tema, tempo, nomeTopico);
+  const valor = localStorage.getItem(chave);
+  return valor === "true";
+}
+
+function recalcularProgresso() {
+  const checkboxes = document.querySelectorAll('.check-estudado');
+  const total = checkboxes.length;
+  const estudados = Array.from(checkboxes).filter(c => c.checked).length;
+  atualizarIndicadorProgresso(total, estudados);
+}
 
 // Função para resetar as Fatias 2 e 3 quando um novo cronograma é solicitado
 function resetarFatiasSubsequentes() {
@@ -22,6 +54,9 @@ function resetarFatiasSubsequentes() {
     btnGerarPerguntas.disabled = false;
     btnGerarPerguntas.style.display = 'none';
   }
+  
+  // Limpa indicador
+  atualizarIndicadorProgresso(0, 0);
 }
 
 // Event Delegation para alternativas das perguntas
@@ -29,6 +64,19 @@ containerCronograma.addEventListener('click', (e) => {
   if (e.target.classList.contains('alternativa')) {
     const containerPergunta = e.target.closest('.pergunta');
     processarResposta(e.target, containerPergunta);
+  }
+});
+
+// Event Delegation para checkboxes de progresso
+containerCronograma.addEventListener('change', (e) => {
+  if (e.target.classList.contains('check-estudado')) {
+    const tema = cronogramaAtual.temaUsado;
+    const tempo = cronogramaAtual.tempoUsado;
+    const topicoDiv = e.target.closest('.topico');
+    const nomeTopico = topicoDiv.querySelector('strong').textContent;
+    
+    salvarProgresso(tema, tempo, nomeTopico, e.target.checked);
+    recalcularProgresso();
   }
 });
 
@@ -53,21 +101,27 @@ form.addEventListener('submit', async (e) => {
     resetarFatiasSubsequentes();
     
     cronogramaAtual = await gerarCronograma(chaveApi, tema, tempo);
+    cronogramaAtual.temaUsado = tema;
+    cronogramaAtual.tempoUsado = tempo;
     
     // Renderização do Cronograma
     cronogramaAtual.semanas.forEach((s, semanaIdx) => {
       containerCronograma.innerHTML += `<h3>Semana ${s.semana}</h3>`;
       s.topicos.forEach((t, topicoIdx) => {
+        const estudado = carregarProgresso(tema, tempo, t.nome);
         containerCronograma.innerHTML += `
           <div class="topico" id="s${semanaIdx}-t${topicoIdx}">
             <p><strong>${t.nome}</strong> (${t.tempo_estimado})<br>
             ${t.justificativa}</p>
             <div class="explicacao-container" id="exp-s${semanaIdx}-t${topicoIdx}"></div>
+            <input type="checkbox" id="check-s${semanaIdx}-t${topicoIdx}" class="check-estudado" ${estudado ? 'checked' : ''}>
+            <label for="check-s${semanaIdx}-t${topicoIdx}">Marcar como estudado</label>
             <div class="perguntas-container" id="perg-s${semanaIdx}-t${topicoIdx}"></div>
           </div>`;
       });
     });
     
+    recalcularProgresso();
     exibirCarregamento(false);
     btnGerarExplicacoes.style.display = 'block';
   } catch (error) {
@@ -75,7 +129,6 @@ form.addEventListener('submit', async (e) => {
     exibirErro(error.message || "Erro ao gerar cronograma.");
   }
 });
-
 // Evento: Gerar Explicações (Fatia 2)
 btnGerarExplicacoes.addEventListener('click', async () => {
   const chaveApi = document.getElementById('chaveApi').value;

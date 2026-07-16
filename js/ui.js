@@ -1,5 +1,6 @@
 // ui.js - Utilitários de UI
 const feedback = document.getElementById('feedback');
+const indicadorProgresso = document.getElementById('indicadorProgresso');
 
 export function exibirCarregamento(estaCarregando) {
   feedback.textContent = estaCarregando ? 'Gerando cronograma...' : '';
@@ -7,6 +8,10 @@ export function exibirCarregamento(estaCarregando) {
 
 export function exibirErro(mensagem) {
   feedback.textContent = `Erro: ${mensagem}`;
+}
+
+export function atualizarIndicadorProgresso(total, estudados) {
+  indicadorProgresso.textContent = `${estudados} de ${total} tópicos estudados`;
 }
 
 export function exibirCarregamentoPerguntas(estaCarregando, container) {
