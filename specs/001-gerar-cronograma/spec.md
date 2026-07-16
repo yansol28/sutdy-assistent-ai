@@ -42,7 +42,7 @@ Como usuário, desejo informar o tema que pretendo estudar e o tempo que tenho d
 - **FR-004**: O sistema DEVE aceitar o "tema" e o "tempo disponível" como entrada.
 - **FR-005**: O sistema DEVE validar o preenchimento dos campos antes de enviar a requisição à IA.
 - **FR-006**: O sistema DEVE gerar um cronograma dividido por semana.
-- **FR-007**: O sistema DEVE incluir para cada tópico: tópico específico, tempo estimado e justificativa de por que esse tópico é importante estudar.
+- **FR-007**: O sistema DEVE incluir para cada tópico: tópico específico, tempo estimado e justificativa de por que esse tópico é importante estudar (ver `data-model.md` para estrutura de dados).
 - **FR-008**: O sistema DEVE exibir o cronograma organizado tópico por tópico na tela.
 - **FR-009**: O sistema DEVE tratar erros da API ou formato de resposta inválido com mensagens de erro amigáveis na interface, sem quebrar o app.
 

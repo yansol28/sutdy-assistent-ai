@@ -66,3 +66,4 @@
 - [ ] T012 Verify keyboard accessibility for all form elements in index.html
 - [ ] T013 Verify color contrast accessibility in css/style.css
 - [ ] T014 Final manual test with 2 distinct input examples
+- [ ] T015 [US1] Verify accessible labels for all form inputs in index.html
