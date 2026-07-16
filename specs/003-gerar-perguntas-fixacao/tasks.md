@@ -12,8 +12,8 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Verify project structure per implementation plan
-- [ ] T002 [P] Configure CSS variables and classes for accessibility (green/red feedback) in css/style.css
+- [X] T001 Verify project structure per implementation plan
+- [X] T002 [P] Configure CSS variables and classes for accessibility (green/red feedback) in css/style.css
 
 ---
 
@@ -23,7 +23,7 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 Implement helper function for Gemini API cleaning/parsing in js/api.js
+- [X] T003 Implement helper function for Gemini API cleaning/parsing in js/api.js
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -42,12 +42,12 @@
 
 ### Implementation for User Story 1
 
-- [ ] T004 [US1] Update HTML to include button "Gerar perguntas de fixação" in index.html
-- [ ] T005 [P] [US1] Implement `gerarPerguntas` function in js/api.js
-- [ ] T006 [US1] Implement validation check in js/main.js to ensure Fatia 2 explanations are done before calling API
-- [ ] T007 [US1] Implement sequential loop in js/main.js to call `gerarPerguntas` for each topic
-- [ ] T008 [US1] Update js/ui.js to handle rendering of loading state for questions per topic
-- [ ] T009 [US1] Implement rendering logic in js/ui.js to display 3 questions with 4 alternatives per topic
+- [X] T004 [US1] Update HTML to include button "Gerar perguntas de fixação" in index.html
+- [X] T005 [P] [US1] Implement `gerarPerguntas` function in js/api.js
+- [X] T006 [US1] Implement validation check in js/main.js to ensure Fatia 2 explanations are done before calling API
+- [X] T007 [US1] Implement sequential loop in js/main.js to call `gerarPerguntas` for each topic
+- [X] T008 [US1] Update js/ui.js to handle rendering of loading state for questions per topic
+- [X] T009 [US1] Implement rendering logic in js/ui.js to display 3 questions with 4 alternatives per topic
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -61,10 +61,10 @@
 
 ### Implementation for User Story 2
 
-- [ ] T010 [P] [US2] Style buttons and feedback classes (success/error) with AA contrast in css/style.css, preparing layout for text indicators
-- [ ] T011 [US2] Implement event listener for button click in js/main.js
-- [ ] T012 [US2] Implement feedback logic in js/ui.js (highlight selected option, mark correct one with background colors AND explicit text/icon indicators like "✓" or "✗" per WCAG 1.4.1)
-- [ ] T013 [US2] Implement disabling logic for all alternatives of the answered question in js/ui.js
+- [X] T010 [P] [US2] Style buttons and feedback classes (success/error) with AA contrast in css/style.css, preparing layout for text indicators
+- [X] T011 [US2] Implement event listener for button click in js/main.js
+- [X] T012 [US2] Implement feedback logic in js/ui.js (highlight selected option, mark correct one with background colors AND explicit text/icon indicators like "✓" or "✗" per WCAG 1.4.1)
+- [X] T013 [US2] Implement disabling logic for all alternatives of the answered question in js/ui.js
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -78,9 +78,9 @@
 
 ### Implementation for User Story 3
 
-- [ ] T014 [US3] Ensure all alternative elements are rendered as `<button>` in js/ui.js
-- [ ] T015 [US3] Verify Tab navigation order through alternatives in browser
-- [ ] T016 [US3] Verify Enter/Space activation triggers same JS feedback logic as mouse click
+- [X] T014 [US3] Ensure all alternative elements are rendered as `<button>` in js/ui.js
+- [X] T015 [US3] Verify Tab navigation order through alternatives in browser
+- [X] T016 [US3] Verify Enter/Space activation triggers same JS feedback logic as mouse click
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -90,9 +90,9 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T017 [P] Documentation updates in specs/003-gerar-perguntas-fixacao/
-- [ ] T018 Run quickstart.md validation guide
-- [ ] T019 Code cleanup and final formatting check (2 spaces, Portuguese names)
+- [X] T017 [P] Documentation updates in specs/003-gerar-perguntas-fixacao/
+- [X] T018 Run quickstart.md validation guide
+- [X] T019 Code cleanup and final formatting check (2 spaces, Portuguese names)
 
 ---
 
