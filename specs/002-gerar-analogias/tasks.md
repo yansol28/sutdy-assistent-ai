@@ -16,7 +16,7 @@
 
 **Purpose**: Project preparation for the new feature
 
-- [ ] T001 Initialize branch and directory structure for analogias
+- [X] T001 Initialize branch and directory structure for analogias
 
 ---
 
@@ -24,7 +24,7 @@
 
 **Purpose**: Core infrastructure setup
 
-- [ ] T002 Implement `gerarExplicacao` client service in js/api.js
+- [X] T002 Implement `gerarExplicacao` client service in js/api.js
 
 ---
 
@@ -36,12 +36,12 @@
 
 ### Implementation for User Story 1
 
-- [ ] T003 [US1] Adicionar botão "Gerar todas as explicações" no DOM em index.html
-- [ ] T004 [US1] Implementar contêineres de explicação (`.explicacao-container`) nos tópicos em index.html
-- [ ] T005 [US1] Implementar lógica de loop sequencial (`for...of` + `await`) em js/main.js
-- [ ] T006 [US1] Implementar atualização de progresso do botão em js/main.js
-- [ ] T007 [US1] Implementar inserção incremental das explicações no DOM em js/main.js
-- [ ] T008 [US1] Implementar tratamento de erro individual por tópico (`try...catch`) em js/main.js
+- [X] T003 [US1] Adicionar botão "Gerar todas as explicações" no DOM em index.html
+- [X] T004 [US1] Implementar contêineres de explicação (`.explicacao-container`) nos tópicos em index.html
+- [X] T005 [US1] Implementar lógica de loop sequencial (`for...of` + `await`) em js/main.js
+- [X] T006 [US1] Implementar atualização de progresso do botão em js/main.js
+- [X] T007 [US1] Implementar inserção incremental das explicações no DOM em js/main.js
+- [X] T008 [US1] Implementar tratamento de erro individual por tópico (`try...catch`) em js/main.js
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -51,6 +51,6 @@
 
 **Purpose**: Final polish and accessibility check
 
-- [ ] T009 Verificar acessibilidade (contraste e teclado) dos novos elementos
-- [ ] T010 Finalizar teste manual com cenários de erro e sucesso
-- [ ] T011 [US1] Validar manualmente, com pelo menos 2 temas diferentes, que as explicações geradas contêm analogia e evitam jargão técnico não explicado (FR-007)
+- [X] T009 Verificar acessibilidade (contraste e teclado) dos novos elementos
+- [X] T010 Finalizar teste manual com cenários de erro e sucesso
+- [X] T011 [US1] Validar manualmente, com pelo menos 2 temas diferentes, que as explicações geradas contêm analogia e evitam jargão técnico não explicado (FR-007)

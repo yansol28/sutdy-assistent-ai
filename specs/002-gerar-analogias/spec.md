@@ -41,7 +41,8 @@ Como usuário, desejo clicar em um botão para gerar explicações simples com a
 - **FR-004**: O sistema DEVE gerar as explicações sequencialmente (um tópico por vez) para respeitar limites de taxa da API.
 - **FR-005**: O sistema DEVE exibir cada explicação abaixo do tópico correspondente assim que finalizada.
 - **FR-006**: O sistema DEVE atualizar o texto do botão com o progresso atual durante a geração.
-- **FR-007**: Toda explicação DEVE conter uma analogia do dia a dia relacionada ao tópico, DEVE evitar termos técnicos sem explicação, sendo compreensível por leigos.
+- **FR-007**: Toda explicação DEVE priorizar a explicação clara do tópico em si, complementada por uma analogia curta do dia a dia (não o inverso). 
+DEVE evitar termos técnicos sem explicação, sendo compreensível por leigos.
 - **FR-008**: Se uma explicação falhar, o sistema DEVE exibir uma mensagem de erro específica naquele tópico e continuar a geração dos tópicos seguintes.
 
 ### Key Entities
