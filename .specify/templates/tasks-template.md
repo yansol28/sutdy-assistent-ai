@@ -72,6 +72,11 @@ Examples of foundational tasks (adjust based on your project):
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
+**⚠️ CONSTITUTION CHECKPOINT**:
+- [ ] Teste manual realizado com pelo menos 2 exemplos de input diferentes?
+- [ ] Código gerado por IA revisado e totalmente compreendido pelo desenvolvedor?
+- [ ] Commit realizado apenas após validação da fatia completa?
+
 ---
 
 ## Phase 3: User Story 1 - [Title] (Priority: P1) 🎯 MVP

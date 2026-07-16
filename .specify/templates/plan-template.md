@@ -40,7 +40,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **Acessibilidade**: Layout suporta contraste AA e navegação por teclado?
+- [ ] **Segurança**: Chave de API tratada apenas em memória (sem persistência)?
+- [ ] **Desempenho**: Inclui feedback visual de carregamento para chamadas de IA?
+- [ ] **Estilo**: Plano prevê nomes em português e indentação de 2 espaços?
+- [ ] **Processo**: A implementação está dividida em fatias verticais testáveis?
 
 ## Project Structure
 

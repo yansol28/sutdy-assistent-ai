@@ -1,50 +1,59 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+<sync_impact_report>
+Version change: 0.0.0 → 1.0.0
+Modified principles:
+  - [PRINCIPLE_1_NAME] → I. Acessibilidade
+  - [PRINCIPLE_2_NAME] → II. Segurança de Credenciais
+  - [PRINCIPLE_3_NAME] → III. Desempenho e UX
+  - [PRINCIPLE_4_NAME] → IV. Disciplina de Desenvolvimento (Vertical Slicing)
+  - [PRINCIPLE_5_NAME] → V. Padrões de Código e Estilo
+Added sections:
+  - Stack e Implantação
+  - Escopo e Limitações
+Removed sections: None
+Templates requiring updates:
+  - .specify/templates/plan-template.md (✅ updated)
+  - .specify/templates/spec-template.md (✅ updated)
+  - .specify/templates/tasks-template.md (✅ updated)
+Follow-up TODOs: None
+</sync_impact_report>
+-->
+
+# Assistente de Estudos com IA Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Acessibilidade
+O sistema deve ser inclusivo e utilizável por todos. Isso exige contraste de cores adequado (mínimo AA), labels explicitamente associados a todos os inputs e garantia de que todos os elementos interativos sejam navegáveis e operáveis via teclado.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Segurança de Credenciais
+A proteção de chaves de API é absoluta. Chaves nunca devem ser commitadas no código-fonte. O usuário deve inserir sua própria chave em um campo de texto do tipo "password". Esta chave não deve ser persistida em localStorage, sessionStorage ou cookies, permanecendo apenas na memória de execução da sessão.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Desempenho e UX
+A experiência do usuário deve ser fluida e informativa. Todas as chamadas à API de IA devem disparar um feedback visual de carregamento (spinner/skeleton). Deve-se evitar chamadas paralelas desnecessárias para respeitar os limites de taxa (rate limits) da API gratuita e garantir a estabilidade da aplicação.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Disciplina de Desenvolvimento (Vertical Slicing)
+O desenvolvimento segue a estratégia de fatias verticais. Um commit deve ser realizado a cada fatia concluída e validada. Nenhuma fatia nova começa antes da anterior ser testada manualmente com pelo menos 2 exemplos de input diferentes. O desenvolvedor deve revisar e entender cada trecho de código gerado por IA antes de aceitá-lo.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Padrões de Código e Estilo
+Consistência e legibilidade são fundamentais. Nomes de variáveis e funções devem ser em português em todo o projeto. O código JavaScript deve usar indentação de 2 espaços e ponto e vírgula obrigatório. Comentários curtos devem explicar trechos não óbvios, servindo como material de estudo.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Stack e Implantação
+A aplicação é construída com tecnologias web fundamentais para garantir simplicidade e facilidade de manutenção.
+- **Frontend**: HTML, CSS e JavaScript puro (Vanilla JS), sem frameworks ou etapas de build.
+- **IA**: Integração direta com a API do Gemini (modelo gemini-flash-latest).
+- **Implantação**: Hospedagem na Vercel como uma página estática única (index.html).
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Escopo e Limitações
+O projeto foca na entrega de valor educacional rápido.
+- **Incluso**: Geração de cronograma, explicações com analogias e perguntas de fixação.
+- **Excluso**: Login de usuário, autenticação centralizada e banco de dados persistente (para as fatias iniciais). Qualquer mudança de escopo exige alteração nesta constituição.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+Esta constituição é a autoridade máxima sobre os padrões do projeto.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+1. **Conformidade**: Todas as tarefas, planos e commits devem ser validados contra estes princípios.
+2. **Emendas**: Mudanças nos princípios exigem incremento de versão (SemVer) e atualização deste documento.
+3. **Revisão**: Periodicamente, o alinhamento entre o código e a constituição deve ser revisado.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-07-15 | **Last Amended**: 2026-07-15

@@ -87,11 +87,14 @@
 
 ### Functional Requirements
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-001 (CONSTITUTION)**: O sistema DEVE garantir contraste AA e suporte a navegação por teclado.
+- **FR-002 (CONSTITUTION)**: Chaves de API DEVEM ser inseridas via input password e mantidas apenas em memória.
+- **FR-003 (CONSTITUTION)**: Toda resposta de IA DEVE ser precedida por um estado de carregamento visual.
+- **FR-004**: System MUST [specific capability, e.g., "allow users to create accounts"]
+- **FR-005**: System MUST [specific capability, e.g., "validate email addresses"]
+- **FR-006**: Users MUST be able to [key interaction, e.g., "reset their password"]
+- **FR-007**: System MUST [data requirement, e.g., "persist user preferences"]
+- **FR-008**: System MUST [behavior, e.g., "log all security events"]
 
 *Example of marking unclear requirements:*
 
