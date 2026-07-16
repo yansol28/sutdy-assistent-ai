@@ -20,7 +20,7 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T002 Implement `obterChaveProgresso` helper function in js/main.js to handle key generation (theme+time+topic)
+- [ ] T002 Implement `obterChaveProgresso` helper function in js/main.js to handle key generation, ensuring sanitization of theme, time, and topic name (remove/replace special chars, limit length).
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -34,7 +34,7 @@
 
 ### Implementation for User Story 1
 
-- [ ] T003 [US1] Update HTML to include checkbox for each topic in js/ui.js
+- [ ] T003 [US1] Update HTML to include checkbox for each topic in js/ui.js, ensuring each checkbox has an associated `<label>` for accessibility.
 - [ ] T004 [P] [US1] Implement `salvarProgresso` in js/main.js using `localStorage`
 - [ ] T005 [P] [US1] Implement `carregarProgresso` in js/main.js to restore checkbox states
 - [ ] T006 [US1] Integrate `carregarProgresso` into topic rendering logic in js/main.js
