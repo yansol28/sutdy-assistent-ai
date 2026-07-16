@@ -1,31 +1,124 @@
 :root {
-  --primary-color: #0056b3;
-  --bg-color: #f4f4f9;
-  --text-color: #333;
-  --success-color: #155724;
-  --success-bg: #d4edda;
-  --error-color: #721c24;
-  --error-bg: #f8d7da;
+  --bg: #FAFAFA;
+  --surface: #FFFFFF;
+  --border: #E4E4E7;
+  --ink: #18181B;
+  --ink-soft: #52525B;
+  --muted: #52525B;
+  --accent: #334155;
+  --accent-soft: #EEF2F6;
+  --success: #15803D;
+  --success-bg: #F0FDF4;
+  --error: #B91C1C;
+  --error-bg: #FEF2F2;
+  --radius: 10px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
   margin: 0;
-  padding: 20px;
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.6;
 }
 
-/* Acessibilidade: Contraste AA garantido com cores escuras sobre fundo claro */
+/* Cabeçalho: elemento de assinatura da página — simples, com respiro generoso */
+.app-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-4) var(--space-4);
+  text-align: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
 .container {
-  max-width: 800px;
+  max-width: 640px;
   margin: 0 auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
+  padding: var(--space-6) var(--space-4);
 }
 
-/* Acessibilidade: foco visível apenas para navegação por teclado */
+/* Formulário */
+form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: var(--space-1);
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  padding: 11px 20px;
+  background: var(--accent);
+  color: #fff;
+  transition: opacity 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Botões secundários (explicações, perguntas) — mesmo peso visual do form */
+#btnGerarExplicacoes,
+#btnGerarPerguntas {
+  width: 100%;
+  margin-bottom: var(--space-3);
+}
+
+/* Foco visível apenas para navegação por teclado */
 input:focus,
 button:focus {
   outline: none;
@@ -33,68 +126,125 @@ button:focus {
 
 body.usando-teclado input:focus,
 body.usando-teclado button:focus {
-  outline: 3px solid var(--primary-color);
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
-button {
-  cursor: pointer;
+/* Feedback e progresso */
+#feedback {
+  font-size: 14px;
+  color: var(--ink-soft);
+  min-height: 20px;
+  margin-bottom: var(--space-2);
 }
 
-.feedback-success {
-  background-color: var(--success-bg);
-  color: var(--success-color);
-  border: 1px solid var(--success-color);
-  padding: 10px;
-  border-radius: 4px;
-  font-weight: bold;
+#indicadorProgresso {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
 }
 
-.feedback-error {
-  background-color: var(--error-bg);
-  color: var(--error-color);
-  border: 1px solid var(--error-color);
-  padding: 10px;
-  border-radius: 4px;
-  font-weight: bold;
+/* Cada tópico do cronograma */
+.topico {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.topico h3 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.topico p {
+  margin: 0 0 var(--space-2) 0;
+}
+
+.topico strong {
+  color: var(--ink);
+}
+
+.explicacao-container {
+  margin-top: var(--space-2);
+}
+
+.explicacao-container p {
+  background: var(--accent-soft);
+  border-radius: 6px;
+  padding: var(--space-3);
+  font-size: 14.5px;
+}
+
+/* Checkbox de progresso: espaçamento próprio, entre explicação e perguntas */
+.topico input[type="checkbox"] {
+  margin-top: var(--space-3);
+  margin-right: var(--space-1);
+  width: 16px;
+  height: 16px;
+}
+
+.topico label[for^="check-"] {
+  display: inline;
+  text-transform: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-soft);
+  letter-spacing: normal;
+}
+
+/* Perguntas de fixação */
+.perguntas-container {
+  margin-top: var(--space-3);
 }
 
 .pergunta {
-  margin-bottom: 20px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.pergunta p {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.alternativas-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
 .alternativa {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #666;
-  border-radius: 4px;
-  background-color: #fff;
-  font-size: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
   text-align: left;
-  transition: background-color 0.2s;
+  font-weight: 400;
+  padding: 10px 14px;
 }
 
 .alternativa:hover:not(:disabled) {
-  background-color: #f0f0f0;
+  border-color: var(--accent);
+  opacity: 1;
 }
 
-.alternativa:disabled {
-  cursor: not-allowed;
+.alternativa.feedback-success {
+  background: var(--success-bg);
+  border-color: var(--success);
+  color: var(--success);
+  font-weight: 600;
 }
 
-.alternativa.correta {
-  background-color: var(--success-bg);
-  border-color: var(--success-color);
-  color: var(--success-color);
-}
-
-.alternativa.incorreta {
-  background-color: var(--error-bg);
-  border-color: var(--error-color);
-  color: var(--error-color);
+.alternativa.feedback-error {
+  background: var(--error-bg);
+  border-color: var(--error);
+  color: var(--error);
+  font-weight: 600;
 }

@@ -1,0 +1,100 @@
+:root {
+  --primary-color: #0056b3;
+  --bg-color: #f4f4f9;
+  --text-color: #333;
+  --success-color: #155724;
+  --success-bg: #d4edda;
+  --error-color: #721c24;
+  --error-bg: #f8d7da;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+}
+
+/* Acessibilidade: Contraste AA garantido com cores escuras sobre fundo claro */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Acessibilidade: foco visível apenas para navegação por teclado */
+input:focus,
+button:focus {
+  outline: none;
+}
+
+body.usando-teclado input:focus,
+body.usando-teclado button:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.feedback-success {
+  background-color: var(--success-bg);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.feedback-error {
+  background-color: var(--error-bg);
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.pergunta {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.alternativa {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 16px;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.alternativa:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.alternativa:disabled {
+  cursor: not-allowed;
+}
+
+.alternativa.correta {
+  background-color: var(--success-bg);
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.alternativa.incorreta {
+  background-color: var(--error-bg);
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
