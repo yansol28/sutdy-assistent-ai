@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #0056b3;
+  --bg-color: #f4f4f9;
+  --text-color: #333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+}
+
+/* Acessibilidade: Contraste AA garantido com cores escuras sobre fundo claro */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Acessibilidade: foco visível apenas para navegação por teclado */
+input:focus,
+button:focus {
+  outline: none;
+}
+
+body.usando-teclado input:focus,
+body.usando-teclado button:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+button {
+  cursor: pointer;
+}

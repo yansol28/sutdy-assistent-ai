@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Assistente de Estudos com IA</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Assistente de Estudos</h1>
+    <form id="formCronograma">
+      <label for="chaveApi">Chave da API:</label>
+      <input type="password" id="chaveApi" name="chaveApi" required>
+      
+      <label for="tema">Tema de estudo:</label>
+      <input type="text" id="tema" name="tema" required>
+      
+      <label for="tempo">Tempo disponível (ex: 5h/semana):</label>
+      <input type="text" id="tempo" name="tempo" required>
+      
+      <button type="submit">Gerar cronograma</button>
+    </form>
+    <div id="feedback"></div>
+    <div id="cronograma"></div>
+  </div>
+  <script src="js/foco-teclado.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
