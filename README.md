@@ -111,6 +111,6 @@ A aplicação está disponível e configurada para deploy contínuo em ambiente 
 
 Deploy Host: Vercel (Frontend Estático com Módulos)
 
-URL de Produção: [https://SEU-LINK-AQUI.vercel.app](https://SEU-LINK-AQUI.vercel.app)](https://sutdy-assistent-ai.vercel.app/)
+URL de Produção: [(https://sutdy-assistent-ai.vercel.app/)
 
 
