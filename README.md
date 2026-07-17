@@ -91,8 +91,8 @@ Por utilizar ES6 Modules (import/export), o navegador exige que os scripts sejam
 Clonar o Repositório:
 
 Bash
-git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-cd NOME_DO_REPOSITORIO
+git clone https://github.com/yansol28/study-assistent-ai.git
+cd study-assistent-ai
 Inicializar o Servidor Local:
 
 Se você utiliza o VS Code, clique com o botão direito no index.html e selecione "Open with Live Server".
@@ -111,6 +111,6 @@ A aplicação está disponível e configurada para deploy contínuo em ambiente 
 
 Deploy Host: Vercel (Frontend Estático com Módulos)
 
-URL de Produção: [https://SEU-LINK-AQUI.vercel.app](https://SEU-LINK-AQUI.vercel.app)
+URL de Produção: [https://SEU-LINK-AQUI.vercel.app](https://SEU-LINK-AQUI.vercel.app)](https://sutdy-assistent-ai.vercel.app/)
 
 
