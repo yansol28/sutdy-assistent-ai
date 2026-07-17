@@ -113,4 +113,25 @@ Deploy Host: Vercel (Frontend Estático com Módulos)
 
 URL de Produção: [(https://sutdy-assistent-ai.vercel.app/)
 
+## 🚀 Plano de Evolução do MVP
+
+Próximos passos técnicos para transformar o assistente local em uma aplicação escalável, distribuída e segura na nuvem.
+
+### 1. Camada de Persistência (Banco de Dados)
+* **Mudança:** Substituição do `localStorage` do navegador pelo **MongoDB**.
+* **Motivação:** O `localStorage` limita o armazenamento a strings de até 5MB e prende os dados ao navegador atual. O MongoDB (NoSQL) permite armazenar os dados de progresso de forma flexível como documentos JSON, facilitando cronogramas dinâmicos gerados por IA e relatórios complexos sem engessar colunas.
+* **Hospedagem:** MongoDB Atlas (camada gratuita na nuvem).
+
+### 2. Arquitetura da Solução (Backend)
+* **Mudança:** Transição de Frontend Estático para uma arquitetura **Full Stack** com uma API em **Node.js (Express ou Fastify)**.
+* **Motivação:** Isolar a lógica de banco de dados e criar uma camada segura para consumir APIs de inteligência artificial (OpenAI/Gemini). Isso impede a exposição de chaves privadas (`API Keys`) no código do cliente.
+
+### 3. Autenticação e Usuários
+* **Mudança:** Implementação de login seguro utilizando **JWT (JSON Web Tokens)** ou Firebase Auth.
+* **Motivação:** Vincular as chaves sanitizadas de progresso (ex: `progresso:usuarioId:tema`) a um estudante específico, permitindo sincronização automática entre múltiplos dispositivos.
+
+### 4. Inteligência Artificial Avançada
+* **Mudança:** Migração de cronogramas estáticos/mockados para geração dinâmica via LLMs integradas ao backend.
+* **Aprimoramento Futuro:** Integração de **RAG (Retrieval-Augmented Generation)** para permitir que o usuário faça upload de PDFs de estudo e a IA adapte o cronograma com base no conteúdo específico daquele arquivo.
+
 
