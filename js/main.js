@@ -5,7 +5,7 @@ import { obterChaveProgresso } from './utils.js';
 
 const form = document.getElementById('formCronograma');
 const containerCronograma = document.getElementById('cronograma');
-const CHAVE_API_GEMINI = "AQ.Ab8RN6LsVyZ4w8H0a7Uk23QbeiPf49rufjUZaBgEXSjRPDDJDQ";
+const CHAVE_API_GEMINI = "AQ.Ab8RN6IZ4hbnnQsW-RVGV18bFdHr1lRWRnSVGXL75bsQccCK9g";
 
 let cronogramaAtual = null;
 
