@@ -37,7 +37,7 @@ Como usuário, desejo informar o tema que pretendo estudar e o tempo que tenho d
 ### Functional Requirements
 
 - **FR-001 (CONSTITUTION)**: O sistema DEVE garantir contraste AA e suporte a navegação por teclado.
-- **FR-002 (CONSTITUTION)**: Chaves de API DEVEM ser inseridas via input password e mantidas apenas em memória.
+- **FR-002[REMOVIDA] (CONSTITUTION)**: Chaves de API DEVEM ser inseridas via input password e mantidas apenas em memória.
 - **FR-003 (CONSTITUTION)**: Toda resposta de IA DEVE ser precedida por um estado de carregamento visual.
 - **FR-004**: O sistema DEVE aceitar o "tema" e o "tempo disponível" como entrada.
 - **FR-005**: O sistema DEVE validar o preenchimento dos campos antes de enviar a requisição à IA.

@@ -5,18 +5,9 @@ import { obterChaveProgresso } from './utils.js';
 
 const form = document.getElementById('formCronograma');
 const containerCronograma = document.getElementById('cronograma');
-const CHAVE_API_GEMINI = "AQ.Ab8RN6KzeFQ5MmtLHHjQiv8nWncot3dJkPyJS618Ojb5fc7Smw";
+const CHAVE_API_GEMINI = "AQ.Ab8RN6LsVyZ4w8H0a7Uk23QbeiPf49rufjUZaBgEXSjRPDDJDQ";
 
 let cronogramaAtual = null;
-
-// Helper para gerar chave única de progresso
-function obterChaveProgresso(tema, tempo, nomeTopico) {
-  const chaveBruta = `${tema}:${tempo}:${nomeTopico}`;
-  const chaveSanitizada = chaveBruta
-    .replace(/[^a-zA-Z0-9: ]/g, '')
-    .substring(0, 100);
-  return `progresso:${chaveSanitizada}`;
-}
 
 function salvarProgresso(tema, tempo, nomeTopico, isChecked) {
   const chave = obterChaveProgresso(tema, tempo, nomeTopico);
@@ -273,7 +264,4 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error("Erro ao reconstruir estado do localStorage", e);
     }
   }
-
-  export { obterChaveProgresso };
-
 });

@@ -103,7 +103,7 @@ Como usuário que utiliza apenas teclado para navegação, desejo conseguir nave
 
 ## Assumptions
 
-- O usuário já configurou sua chave de API do Gemini válida na interface nas etapas anteriores.
+-[REMOVIDO] O usuário já configurou sua chave de API do Gemini válida na interface nas etapas anteriores.
 - A explicação de cada tópico está disponível em memória ou no DOM da página para servir de contexto para a geração das perguntas correspondentes.
 - O formato de retorno estruturado (como JSON) instruído no prompt do Gemini será interpretado com sucesso pelo parser de IA do JavaScript.
 - A geração sequencial de um tópico por vez evita concorrência e mitiga estouros de rate limits de contas gratuitas da API.

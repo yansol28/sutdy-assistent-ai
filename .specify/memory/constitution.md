@@ -27,7 +27,7 @@ Follow-up TODOs: None
 O sistema deve ser inclusivo e utilizável por todos. Isso exige contraste de cores adequado (mínimo AA), labels explicitamente associados a todos os inputs e garantia de que todos os elementos interativos sejam navegáveis e operáveis via teclado.
 
 ### II. Segurança de Credenciais
-A proteção de chaves de API é absoluta. Chaves nunca devem ser commitadas no código-fonte. O usuário deve inserir sua própria chave em um campo de texto do tipo "password". Esta chave não deve ser persistida em localStorage, sessionStorage ou cookies, permanecendo apenas na memória de execução da sessão.
+[REMOVIDO]A proteção de chaves de API é absoluta. Chaves nunca devem ser commitadas no código-fonte. O usuário deve inserir sua própria chave em um campo de texto do tipo "password". Esta chave não deve ser persistida em localStorage, sessionStorage ou cookies, permanecendo apenas na memória de execução da sessão.
 
 ### III. Desempenho e UX
 A experiência do usuário deve ser fluida e informativa. Todas as chamadas à API de IA devem disparar um feedback visual de carregamento (spinner/skeleton). Deve-se evitar chamadas paralelas desnecessárias para respeitar os limites de taxa (rate limits) da API gratuita e garantir a estabilidade da aplicação.

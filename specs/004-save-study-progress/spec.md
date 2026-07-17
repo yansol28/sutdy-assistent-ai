@@ -54,7 +54,7 @@ Como estudante, quero ver uma contagem de quantos tópicos eu já estudei em rel
 ### Functional Requirements
 
 - **FR-001 (CONSTITUTION)**: O sistema DEVE garantir contraste AA e suporte a navegação por teclado.
-- **FR-002 (CONSTITUTION)**: Chaves de API DEVEM ser inseridas via input password e mantidas apenas em memória.
+- **FR-002[REMOVIDO] (CONSTITUTION)**: Chaves de API DEVEM ser inseridas via input password e mantidas apenas em memória.
 - **FR-003 (CONSTITUTION)**: Toda resposta de IA DEVE ser precedida por um estado de carregamento visual.
 - **FR-004**: O sistema DEVE exibir um checkbox "Marcar como estudado" ao lado de cada tópico do cronograma.
 - **FR-005**: O sistema DEVE persistir o estado de estudado/não estudado de cada tópico no `localStorage`.
