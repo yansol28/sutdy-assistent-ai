@@ -24,6 +24,7 @@ A aplicação foi estruturada utilizando JavaScript moderno (ES6+ Modules) sem d
 │   ├── main.js              # Orquestrador da lógica de estado e fluxos
 │   └── foco-teclado.js      # Script de acessibilidade para navegação por teclado
 └── index.html               # Estrutura semântica da aplicação
+```
 
 🛠️ Detalhamento Técnico das Atividades Realizadas
 O desenvolvimento foi dividido de forma incremental através de Fatiamento Vertical (Vertical Slicing), garantindo que cada fase entregasse valor real e testável de ponta a ponta:
