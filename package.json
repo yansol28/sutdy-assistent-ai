@@ -1,0 +1,25 @@
+{
+  "name": "study-assistent-ai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node node_modules/vitest/vitest.mjs run js/main.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yansol28/sutdy-assistent-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yansol28/sutdy-assistent-ai/issues"
+  },
+  "homepage": "https://github.com/yansol28/sutdy-assistent-ai#readme",
+  "devDependencies": {
+    "jsdom": "^29.1.1",
+    "vitest": "^4.1.10"
+  }
+}

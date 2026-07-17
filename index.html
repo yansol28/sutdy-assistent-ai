@@ -11,27 +11,27 @@
     <h1>Assistente de Estudos</h1>
   </header>
 
-  <main class="container">
-    <form id="formCronograma">
-      <label for="chaveApi">Chave da API</label>
-      <input type="password" id="chaveApi" name="chaveApi" required>
+<main class="container">
+    <!-- COLUNA ESQUERDA: Controla o formulário, feedbacks e botões fixos -->
+    <div class="coluna-esquerda">
+      
+      <form id="formCronograma">
+        <label for="tema">Tema de estudo</label>
+        <input type="text" id="tema" name="tema" required>
 
-      <label for="tema">Tema de estudo</label>
-      <input type="text" id="tema" name="tema" required>
+        <label for="tempo">Tempo disponível (ex: 5h/semana)</label>
+        <input type="text" id="tempo" name="tempo" required>
 
-      <label for="tempo">Tempo disponível (ex: 5h/semana)</label>
-      <input type="text" id="tempo" name="tempo" required>
+        <button type="submit">Gerar cronograma</button>
+      </form>
 
-      <button type="submit">Gerar cronograma</button>
-    </form>
+      <div id="feedback"></div>
+      <div id="indicadorProgresso"></div>
 
-    <div id="feedback"></div>
-    <div id="indicadorProgresso"></div>
-
-    <button id="btnGerarExplicacoes" style="display:none;">Gerar todas as explicações</button>
-    <button id="btnGerarPerguntas" style="display:none;">Gerar perguntas de fixação</button>
-
+    </div>
+    <!-- COLUNA DIREITA: Onde o cronograma gigante e as caixas vão renderizar -->
     <div id="cronograma"></div>
+
   </main>
 
   <script src="js/foco-teclado.js"></script>

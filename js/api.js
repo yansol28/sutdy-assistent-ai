@@ -1,5 +1,17 @@
 // api.js - Cliente API Gemini
 
+// Constante global com a base da URL que nunca muda
+const GEMINI_BASE_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent`;
+
+/**
+ * Função utilitária para construir a URL da API com a chave do usuário
+ * @param {string} chaveApi - A chave de API fornecida pelo usuário
+ * @returns {string} - URL completa e pronta para o fetch
+ */
+function construirUrlGemini(chaveApi) {
+    return `${GEMINI_BASE_URL}?key=${chaveApi}`;
+}
+
 // Helper para limpar resposta JSON da API
 function limparRespostaJson(textoResposta) {
   const inicioJson = textoResposta.indexOf('{');
@@ -14,7 +26,7 @@ function limparRespostaJson(textoResposta) {
 }
 
 export async function gerarCronograma(chaveApi, tema, tempo) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${chaveApi}`;
+  const url = construirUrlGemini(chaveApi);
 
   const prompt = `Você é um especialista em planejamento de estudos.
   Dado o tema: ${tema}
@@ -38,7 +50,7 @@ export async function gerarCronograma(chaveApi, tema, tempo) {
 }
 
 export async function gerarExplicacao(chaveApi, tema, topico) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${chaveApi}`;
+  const url = construirUrlGemini(chaveApi);
 
   const prompt = `Você é um especialista em didática.
   Dado o tema: ${tema}
@@ -68,8 +80,8 @@ export async function gerarExplicacao(chaveApi, tema, topico) {
 }
 
 export async function gerarPerguntas(chaveApi, tema, topico) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${chaveApi}`;
-
+  const url = construirUrlGemini(chaveApi);
+  
   const prompt = `Você é um especialista em avaliação educacional.
   Dado o tema: ${tema}
   E o tópico: ${topico}
